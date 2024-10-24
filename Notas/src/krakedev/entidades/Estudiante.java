@@ -7,7 +7,7 @@ public class Estudiante {
     private String nombre;
     private ArrayList<Nota> notas;
 
-    public Estudiante(String cedula, String nombre) {
+    public Estudiante(String cedula, String nombre, String string) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.notas = new ArrayList<>();
