@@ -28,6 +28,8 @@ public class Prestamo {
 		Interes = interes;
 		Plazo = plazo;
 	}
-	
+	public Cuota[] getCuotas() {
+        return cuotas;
+    }
 
 }

@@ -41,31 +41,3 @@ public class Naipe {
     }
 }
 
-class Numero {
-    private String valor;
-    private int puntos;
-
-    public Numero(String valor, int puntos) {
-        this.valor = valor;
-        this.puntos = puntos;
-    }
-
-    // Getters y setters si los necesitas
-}
-
-// Clase Palo (asumiendo que ya está creada)
-enum Palo {
-    CORAZONES, TREBOLES, DIAMANTES, PICAS
-}
-
-class Carta {
-    private Numero numero;
-    private Palo palo;
-
-    public Carta(Numero numero, Palo palo) {
-        this.numero = numero;
-        this.palo = palo;
-    }
-
-    // Getters y setters si los necesitas
-}
