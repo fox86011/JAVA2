@@ -100,6 +100,7 @@ public class AdminPersonas {
         // Inicializa la conexión y el prepared statement
         Connection con = null;
         PreparedStatement ps;
+ 
 
         try {
             // Obtiene una conexión a la base de datos
