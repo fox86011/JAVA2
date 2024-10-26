@@ -3,6 +3,7 @@ package com.krakedev.persistencia.servicios;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.krakedev.persistencia.entidades.Persona;
 import com.krakedev.persistencia.utils.ConexionBDD;
@@ -91,5 +92,47 @@ public class AdminPersonas {
                 System.out.println("Error de infraestructura");
             }
         }
+    }
+    public static ArrayList<Persona> buscarPorNombre(String nombreBuscado) throws Exception {
+        // Crea una lista vacía para almacenar los resultados
+        ArrayList<Persona> personas = new ArrayList<Persona>();
+
+        // Inicializa la conexión y el prepared statement
+        Connection con = null;
+        PreparedStatement ps;
+
+        try {
+            // Obtiene una conexión a la base de datos
+            con = ConexionBDD.conectar();
+
+            // Prepara la sentencia SQL para buscar personas por nombre
+            ps = con.prepareStatement("SELECT * FROM personas WHERE nombre LIKE ?");
+            // Establece el valor del parámetro de búsqueda (con comodines para una búsqueda parcial)
+            ps.setString(1, "%" + nombreBuscado + "%");
+
+            // Ejecuta la consulta y obtiene los resultados
+            // ... (falta el código para obtener los resultados y agregarlos a la lista)
+
+        } catch (Exception e) {
+            // Registra un error en el log
+            LOGGER.error("Error al consultar por nombre", e);
+            // Lanza una nueva excepción para propagar el error
+            throw new Exception("Error al consultar por nombre");
+        } finally {
+            // Cierra la conexión a la base de datos
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                // Registra un error en el log
+                LOGGER.error("Error con la base de datos", e);
+                // Lanza una nueva excepción para propagar el error
+                throw new Exception("Error con la base de datos");
+            }
+        }
+
+        // Devuelve la lista de personas encontradas
+        return personas;
     }
 }
