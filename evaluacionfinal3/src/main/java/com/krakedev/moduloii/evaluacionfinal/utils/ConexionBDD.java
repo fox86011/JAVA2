@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
 
 public class ConexionBDD {
     private static final Logger LOGGER = LogManager.getLogger(ConexionBDD.class);
-    private static final String URL = "jdbc:postgresql://localhost:5432/INVENTARIOS_KRAKEDEV";
+    private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
     private static final String USER = "postgres";
     private static final String PASSWORD = "159753";
 
